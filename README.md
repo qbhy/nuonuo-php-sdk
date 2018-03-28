@@ -1,5 +1,7 @@
 # nuonuo-php-sdk
-诺诺开放平台SDK
+诺诺开放平台SDK (非官方)
+
+* [诺诺开放平台 API](https://open.jss.com.cn//interplatform/getApiList.do?index=1)
 
 ## 安装
 ```bash
