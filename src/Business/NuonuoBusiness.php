@@ -26,7 +26,7 @@ class NuonuoBusiness
      *
      * @return mixed
      */
-    public function request($method, array $params = [])
+    protected function request($method, array $params = [])
     {
         return $this->api->request($method, $params);
     }

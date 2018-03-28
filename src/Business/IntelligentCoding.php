@@ -17,7 +17,7 @@ namespace Qbhy\Nuonuo\Business;
 class IntelligentCoding extends NuonuoBusiness
 {
     /**
-     * 查询电子发票
+     * 批量获取商品税收编码接口
      *
      * @param string  $service Y    batchQueryCodeDK    50    服务名称，取常量：batchQueryCodeDK
      * @param string  $tax_num Y    91330000692368905R    30    用户税号
