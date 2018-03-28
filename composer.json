@@ -1,0 +1,11 @@
+{
+    "name": "96qbhy/nuonuo-php-sdk",
+    "description": "诺诺开放平台php SDK",
+    "authors": [
+        {
+            "name": "96qbhy",
+            "email": "96qbhy@gmail.com"
+        }
+    ],
+    "require": {}
+}
