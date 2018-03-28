@@ -7,14 +7,26 @@
 
 namespace Qbhy\Nuonuo;
 
+use Doctrine\Common\Cache\Cache;
+use Hanson\Foundation\Config;
 use Hanson\Foundation\Foundation;
+use Qbhy\Nuonuo\Business\ElectronInvoice;
+use Qbhy\Nuonuo\Business\IntelligentCoding;
+use Qbhy\Nuonuo\Business\Merchant;
+use Qbhy\Nuonuo\Business\QuickInvoice;
+use Qbhy\Nuonuo\Business\SynergyOffice;
 
 
 /**
- * @property \Hanson\Foundation\Config $config
- * @property \Doctrine\Common\Cache\Cache $cache
- * @property \Qbhy\Nuonuo\Api $api
- * @property \Qbhy\Nuonuo\AccessToken $accessToken
+ * @property Config            $config
+ * @property Cache             $cache
+ * @property AccessToken       $accessToken
+ * @property Api               $api
+ * @property Merchant          $merchant
+ * @property ElectronInvoice   $electronInvoice
+ * @property IntelligentCoding $intelligentCoding
+ * @property QuickInvoice      $quickInvoice
+ * @property SynergyOffice     $synergyOffice
  * @package Nuonuo
  */
 class Nuonuo extends Foundation

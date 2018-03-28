@@ -5,13 +5,19 @@
  * Time: 下午3:21
  */
 
-namespace Qbhy\Nuonuo\QuickInvoice;
+namespace Qbhy\Nuonuo\Business;
 
-use Qbhy\Nuonuo\Api;
-
-class QuickInvoice extends Api
+/**
+ * Class QuickInvoice
+ *
+ * @link    https://open.jss.com.cn//interplatform/getApiList.do?index=2
+ * @package Qbhy\Nuonuo\QuickInvoice
+ */
+class QuickInvoice extends NuonuoBusiness
 {
     /**
+     * 查询请求开票信息接口
+     *
      * @param int $extensionNum 分机号，没有可不填或者填0
      *
      * @return array
@@ -22,6 +28,20 @@ class QuickInvoice extends Api
     }
 
     /**
+     * 查询企业税盘信息接口
+     *
+     * @param string $taxDiscNumber 金税盘号
+     *
+     * @return array
+     */
+    public function queryGoldenPlate($taxDiscNumber)
+    {
+        return $this->request('nuonuo.speedBilling.queryGoldenPlate', compact('taxDiscNumber'));
+    }
+
+    /**
+     * 查询企业开票信息接口
+     *
      * @param string $kpCode       企业税号    91330000692368905R
      * @param string $kpName       企业名称    浙江爱信诺航天信息有限公司
      * @param string $kpTel        企业电话    0571-85022017
@@ -40,16 +60,5 @@ class QuickInvoice extends Api
             compact('kpCode', 'kpName', 'kpTel', 'accountBlank', 'bankAccount', 'kpAddr', 'taxFlag', 'code', 'systype')
         );
     }
-
-    /**
-     * @param $taxDiscNumber 金税盘号
-     *
-     * @return array
-     */
-    public function queryGoldenPlate($taxDiscNumber)
-    {
-        return $this->request('nuonuo.speedBilling.queryGoldenPlate', compact('taxDiscNumber'));
-    }
-
 
 }

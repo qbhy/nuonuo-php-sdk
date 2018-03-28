@@ -57,11 +57,11 @@ class Api extends AbstractAPI
          */
 
         $headers = [
-            'compress'   => $this->compress,
-            'appKey'     => $this->appKey,
-            'appRate'    => $this->appRate,
-            'dataType'   => $this->dataType,
-            'signMethod' => $this->signMethod,
+            'compress'    => $this->compress,
+            'appKey'      => $this->appKey,
+            'appRate'     => $this->appRate,
+            'dataType'    => $this->dataType,
+            'signMethod'  => $this->signMethod,
             'accessToken' => $this->accessToken->getToken(),
         ];
 
@@ -83,6 +83,7 @@ class Api extends AbstractAPI
 
     /**
      * @param string $version
+     *
      * @return static
      */
     public function setVersion($version)
@@ -102,6 +103,7 @@ class Api extends AbstractAPI
 
     /**
      * @param bool $useHttps
+     *
      * @return Api
      */
     public function setUseHttps($useHttps)
@@ -113,6 +115,7 @@ class Api extends AbstractAPI
 
     /**
      * @param mixed $compress
+     *
      * @return Api
      */
     public function setCompress($compress)
@@ -124,6 +127,7 @@ class Api extends AbstractAPI
 
     /**
      * @param int $appRate
+     *
      * @return Api
      */
     public function setAppRate($appRate)
@@ -135,6 +139,7 @@ class Api extends AbstractAPI
 
     /**
      * @param string $dataType
+     *
      * @return Api
      */
     public function setDataType($dataType)
@@ -146,6 +151,7 @@ class Api extends AbstractAPI
 
     /**
      * @param string $signMethod
+     *
      * @return Api
      */
     public function setSignMethod($signMethod)
@@ -157,6 +163,7 @@ class Api extends AbstractAPI
 
     /**
      * @param Http $http
+     *
      * @return static
      */
     public function setHttp($http)
