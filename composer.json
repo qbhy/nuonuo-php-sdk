@@ -7,5 +7,12 @@
             "email": "96qbhy@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Qbhy\\Nuonuo\\": "src/"
+        }
+    },
+    "require": {
+        "hanson/foundation-sdk": "^2.0"
+    }
 }
