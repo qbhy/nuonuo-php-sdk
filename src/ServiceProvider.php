@@ -24,6 +24,8 @@ class ServiceProvider implements BaseServiceProvider
             /** @var \Qbhy\Nuonuo\Nuonuo $container */
             return new Api($container->accessToken, $container->config->get('appId'), $container->config->get('userTax', null));
         };
+
+
     }
 
 }

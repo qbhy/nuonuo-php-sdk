@@ -8,6 +8,7 @@
 namespace Qbhy\Nuonuo;
 
 use Hanson\Foundation\AbstractAPI;
+use Hanson\Foundation\Http;
 
 class Api extends AbstractAPI
 {
@@ -150,6 +151,17 @@ class Api extends AbstractAPI
     public function setSignMethod($signMethod)
     {
         $this->signMethod = $signMethod;
+
+        return $this;
+    }
+
+    /**
+     * @param Http $http
+     * @return static
+     */
+    public function setHttp($http)
+    {
+        $this->http = $http;
 
         return $this;
     }
