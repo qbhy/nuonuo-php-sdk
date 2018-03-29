@@ -5,9 +5,10 @@
  * Time: 下午12:08
  */
 
-namespace Qbhy\Nuonuo;
+namespace Qbhy\Nuonuo\AccessToken;
 
 use Doctrine\Common\Cache\Cache;
+use GuzzleHttp\Exception\RequestException;
 use Hanson\Foundation\AbstractAccessToken;
 
 class AccessToken extends AbstractAccessToken
@@ -30,11 +31,15 @@ class AccessToken extends AbstractAccessToken
 
     public function getTokenFromServer()
     {
-        $response = $this->getHttp()->post(static::TOKEN_API, [
-            'client_id'     => $this->appId,
-            'client_secret' => $this->secret,
-            'grant_type'    => $this->granType,
-        ]);
+        try {
+            $response = $this->getHttp()->post(static::TOKEN_API, [
+                'client_id'     => $this->appId,
+                'client_secret' => $this->secret,
+                'grant_type'    => $this->granType,
+            ]);
+        } catch (RequestException $exception) {
+            $response = $exception->getResponse();
+        }
 
         return json_decode(strval($response->getBody()), true);
     }

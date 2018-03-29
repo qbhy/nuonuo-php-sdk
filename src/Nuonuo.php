@@ -10,6 +10,7 @@ namespace Qbhy\Nuonuo;
 use Doctrine\Common\Cache\Cache;
 use Hanson\Foundation\Config;
 use Hanson\Foundation\Foundation;
+use Qbhy\Nuonuo\AccessToken\AccessToken;
 use Qbhy\Nuonuo\Business\ElectronInvoice;
 use Qbhy\Nuonuo\Business\IntelligentCoding;
 use Qbhy\Nuonuo\Business\Merchant;

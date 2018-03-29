@@ -5,7 +5,7 @@
  * Time: 下午1:19
  */
 
-namespace Qbhy\Nuonuo;
+namespace Qbhy\Nuonuo\AccessToken;
 
 
 class AccessTokenException extends \Exception

@@ -7,8 +7,10 @@
 
 namespace Qbhy\Nuonuo;
 
+use GuzzleHttp\Exception\RequestException;
 use Hanson\Foundation\AbstractAPI;
 use Hanson\Foundation\Http;
+use Qbhy\Nuonuo\AccessToken\AccessToken;
 
 class Api extends AbstractAPI
 {
@@ -36,14 +38,16 @@ class Api extends AbstractAPI
     {
         $url = $this->useHttps ? static::HTTPS_API : static::API;
 
-        $params['method'] = $method;
-
-        $response = $this->getHttp()->request($url, 'POST', $this->generateOptions($params));
+        try {
+            $response = $this->getHttp()->request($url, 'POST', $this->generateOptions($method, $params));
+        } catch (RequestException $exception) {
+            $response = $exception->getResponse();
+        }
 
         return json_decode(strval($response->getBody()), true);
     }
 
-    public function generateOptions($params = [])
+    public function generateOptions($method, $params = [])
     {
         /**
          * 默认请求头
@@ -71,6 +75,7 @@ class Api extends AbstractAPI
         $params = array_merge([
             'version'   => $this->version,
             'timestamp' => time(),
+            'method'    => $method,
         ], $params);
 
         $options = [

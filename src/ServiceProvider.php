@@ -10,6 +10,7 @@ namespace Qbhy\Nuonuo;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface as BaseServiceProvider;
+use Qbhy\Nuonuo\AccessToken\AccessToken;
 use Qbhy\Nuonuo\Business\ElectronInvoice;
 use Qbhy\Nuonuo\Business\IntelligentCoding;
 use Qbhy\Nuonuo\Business\Merchant;
